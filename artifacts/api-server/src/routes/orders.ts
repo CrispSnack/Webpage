@@ -3,6 +3,7 @@ import { db, ordersTable, productsTable, cartItemsTable, couponsTable } from "@w
 import { eq, and, desc } from "drizzle-orm";
 import type { OrderItem, ShippingAddress, GstDetails } from "@workspace/db";
 import { calculateGst } from "../lib/gst.js";
+import { sendNewOrderEmail } from "../lib/email.js";
 
 const router = Router();
 
@@ -118,6 +119,21 @@ router.post("/", async (req, res) => {
       paymentStatus: "unpaid",
       notes,
     }).returning();
+
+    // Send order notification email (fire-and-forget — never block the response)
+    sendNewOrderEmail({
+      orderNumber: order.orderNumber,
+      customerName: order.shippingAddress.name,
+      customerEmail: userId ? (req.session as any).userEmail ?? guestEmail ?? "" : guestEmail ?? "",
+      items: orderItems.map((i) => ({ name: i.name, quantity: i.quantity, price: i.price })),
+      subtotal: order.subtotal,
+      discountAmount: order.discountAmount,
+      shippingAmount: order.shippingAmount,
+      total: order.total,
+      shippingAddress: order.shippingAddress,
+      couponCode: order.couponCode ?? undefined,
+      notes: order.notes ?? undefined,
+    }).catch((err) => console.error("[email] Failed to send order notification:", err));
 
     // Deduct stock
     for (const item of orderItems) {
