@@ -66,7 +66,7 @@ export default function Header() {
               <img
                 src={crispyWordmark}
                 alt="Crispy N Snacky — Crunchy Moments, Delivered"
-                className="h-[52px] w-auto object-contain"
+                className="h-[68px] w-auto object-contain"
               />
             </Link>
 

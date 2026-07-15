@@ -1,5 +1,5 @@
 import { Link } from 'wouter';
-import crispyLogo from '@assets/Final_Crispy_N_Snacky_Logo_1784136094962.png';
+import crispyWordmark from '@assets/Header_Text_Image_transparent.png';
 
 const GREEN = 'hsl(122 42% 51%)';
 const GOLD = 'hsl(43 72% 56%)';
@@ -15,16 +15,12 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="md:col-span-5">
-            <Link href="/__preview/c" className="flex items-center gap-3 mb-5 w-fit group hover:opacity-85 transition-opacity">
-              <img src={crispyLogo} alt="Crispy N Snacky" className="w-12 h-12 object-contain rounded-full ring-2 ring-[hsl(43_72%_56%/0.7)]" />
-              <div className="flex flex-col">
-                <span className="text-lg font-black uppercase tracking-tighter" style={{ fontFamily: 'var(--font-heading)', color: GREEN }}>
-                  Crispy<span style={{ color: GOLD }}>N</span>Snacky
-                </span>
-                <span className="text-[9px] font-bold uppercase tracking-[0.15em]" style={{ color: MUTED_FG }}>
-                  Crunchy Moments, Delivered
-                </span>
-              </div>
+            <Link href="/" className="inline-flex mb-5 w-fit group hover:opacity-85 transition-opacity">
+              <img
+                src={crispyWordmark}
+                alt="Crispy N Snacky — Crunchy Moments, Delivered"
+                className="h-[68px] w-auto object-contain"
+              />
             </Link>
             <p className="text-sm mb-6 max-w-xs leading-relaxed" style={{ color: MUTED_FG }}>
               Bold South Indian snacks and premium teas. Traditionally crafted. No artificial flavours. Ever.
