@@ -31,19 +31,19 @@ export default function Collections() {
           
           <div className="flex flex-wrap gap-4">
             <a 
-              href="/__preview/c/collections" 
+              href="/collections" 
               className={`px-8 py-4 font-bold uppercase tracking-widest text-sm transition-all border ${!category ? 'bg-primary text-primary-foreground border-primary' : 'bg-transparent text-foreground border-border hover:border-primary hover:text-primary'}`}
             >
               EVERYTHING
             </a>
             <a 
-              href="/__preview/c/collections?category=tea" 
+              href="/collections?category=tea" 
               className={`px-8 py-4 font-bold uppercase tracking-widest text-sm transition-all border ${category === 'tea' ? 'bg-primary text-primary-foreground border-primary' : 'bg-transparent text-foreground border-border hover:border-primary hover:text-primary'}`}
             >
               TEA BLENDS
             </a>
             <a 
-              href="/__preview/c/collections?category=snacks" 
+              href="/collections?category=snacks" 
               className={`px-8 py-4 font-bold uppercase tracking-widest text-sm transition-all border ${category === 'snacks' ? 'bg-primary text-primary-foreground border-primary' : 'bg-transparent text-foreground border-border hover:border-primary hover:text-primary'}`}
             >
               SNACKS

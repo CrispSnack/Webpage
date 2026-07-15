@@ -15,7 +15,7 @@ export default function ProductCard({ product }: { product: Product }) {
       transition={{ duration: 0.5 }}
       className="group flex flex-col relative"
     >
-      <Link href={`/__preview/c/products/${product.slug}`} className="relative aspect-[4/5] bg-card border-2 border-transparent group-hover:border-primary transition-all duration-300 overflow-hidden block">
+      <Link href={`/products/${product.slug}`} className="relative aspect-[4/5] bg-card border-2 border-transparent group-hover:border-primary transition-all duration-300 overflow-hidden block">
         {product.image ? (
           <img 
             src={product.image} 
@@ -39,7 +39,7 @@ export default function ProductCard({ product }: { product: Product }) {
       </Link>
 
       <div className="mt-6 flex justify-between items-start">
-        <Link href={`/__preview/c/products/${product.slug}`} className="flex-1 pr-4">
+        <Link href={`/products/${product.slug}`} className="flex-1 pr-4">
           <h3 className="font-heading text-xl font-bold uppercase text-foreground group-hover:text-primary transition-colors leading-tight mb-2">
             {product.name}
           </h3>

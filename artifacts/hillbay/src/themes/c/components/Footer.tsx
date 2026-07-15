@@ -43,10 +43,10 @@ export default function Footer() {
             <h4 className="text-xs font-black uppercase tracking-widest mb-5" style={{ fontFamily: 'var(--font-heading)', color: GREEN }}>Shop</h4>
             <ul className="space-y-3">
               {[
-                { label: 'All Products', href: '/__preview/c/collections' },
-                { label: 'Tea', href: '/__preview/c/collections?category=tea' },
-                { label: 'Snacks', href: '/__preview/c/collections?category=snacks' },
-                { label: 'Gift Sets', href: '/__preview/c/collections?badge=Gift+Pick' },
+                { label: 'All Products', href: '/collections' },
+                { label: 'Tea', href: '/collections?category=tea' },
+                { label: 'Snacks', href: '/collections?category=snacks' },
+                { label: 'Gift Sets', href: '/collections?badge=Gift+Pick' },
               ].map(({ label, href }) => (
                 <li key={label}>
                   <Link
@@ -68,9 +68,9 @@ export default function Footer() {
             <h4 className="text-xs font-black uppercase tracking-widest mb-5" style={{ fontFamily: 'var(--font-heading)', color: GREEN }}>Info</h4>
             <ul className="space-y-3">
               {[
-                { label: 'About Us', href: '/__preview/c/about' },
-                { label: 'Contact', href: '/__preview/c/contact' },
-                { label: 'Account', href: '/__preview/c/account' },
+                { label: 'About Us', href: '/about' },
+                { label: 'Contact', href: '/contact' },
+                { label: 'Account', href: '/account' },
                 { label: 'Shipping', href: '#' },
                 { label: 'FAQ', href: '#' },
               ].map(({ label, href }) => (

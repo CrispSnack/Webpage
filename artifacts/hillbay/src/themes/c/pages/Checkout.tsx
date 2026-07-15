@@ -23,7 +23,7 @@ export default function Checkout() {
           WE'VE RECEIVED YOUR ORDER AND IT WILL BE SHIPPED SHORTLY.
         </p>
         <Link 
-          href="/__preview/c"
+          href="/"
           className="border-2 border-primary text-primary px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors"
         >
           BACK TO STORE

@@ -104,7 +104,7 @@ export default function CartDrawer() {
                   <span className="font-heading text-4xl font-bold text-primary">₹{cartTotal.toLocaleString('en-IN')}</span>
                 </div>
                 <Link 
-                  href="/__preview/c/checkout" 
+                  href="/checkout" 
                   onClick={() => setIsCartOpen(false)}
                   className="w-full flex items-center justify-center bg-primary text-primary-foreground py-5 font-bold uppercase tracking-widest text-lg hover:bg-white hover:text-black transition-colors"
                 >

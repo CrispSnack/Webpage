@@ -28,9 +28,9 @@ export default function ProductDetail({ params }: { params: { slug: string } }) 
     <div className="bg-background">
       <div className="border-b border-border bg-card">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center text-xs font-bold tracking-widest uppercase text-foreground/50">
-          <Link href="/__preview/c" className="hover:text-primary transition-colors">HOME</Link>
+          <Link href="/" className="hover:text-primary transition-colors">HOME</Link>
           <ChevronRight className="w-4 h-4 mx-2 text-border" />
-          <Link href={`/__preview/c/collections?category=${product.category}`} className="hover:text-primary transition-colors">
+          <Link href={`/collections?category=${product.category}`} className="hover:text-primary transition-colors">
             {product.category}
           </Link>
           <ChevronRight className="w-4 h-4 mx-2 text-border" />

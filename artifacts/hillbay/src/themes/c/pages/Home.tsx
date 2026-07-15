@@ -73,14 +73,14 @@ export default function Home() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="/__preview/c/collections?category=snacks"
+                  href="/collections?category=snacks"
                   className="inline-flex justify-center items-center px-8 py-4 font-black text-sm uppercase tracking-[0.15em] transition-all hover:scale-[1.02] active:scale-[0.98]"
                   style={{ background: GREEN, color: 'hsl(0 0% 5%)' }}
                 >
                   Shop Snacks
                 </Link>
                 <Link
-                  href="/__preview/c/collections?category=tea"
+                  href="/collections?category=tea"
                   className="inline-flex justify-center items-center px-8 py-4 font-black text-sm uppercase tracking-[0.15em] transition-all border hover:border-primary hover:text-primary"
                   style={{ borderColor: BORDER, color: 'hsl(210 60% 96%)' }}
                 >
@@ -178,7 +178,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Tea tile */}
-            <Link href="/__preview/c/collections?category=tea" className="group relative overflow-hidden border h-64 md:h-80 flex items-end p-8" style={{ borderColor: BORDER, background: CARD }}>
+            <Link href="/collections?category=tea" className="group relative overflow-hidden border h-64 md:h-80 flex items-end p-8" style={{ borderColor: BORDER, background: CARD }}>
               <div
                 className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500"
                 style={{ background: `linear-gradient(135deg, hsl(123 54% 23%), transparent)` }}
@@ -200,7 +200,7 @@ export default function Home() {
             </Link>
 
             {/* Snacks tile */}
-            <Link href="/__preview/c/collections?category=snacks" className="group relative overflow-hidden border h-64 md:h-80 flex items-end p-8" style={{ borderColor: BORDER, background: CARD }}>
+            <Link href="/collections?category=snacks" className="group relative overflow-hidden border h-64 md:h-80 flex items-end p-8" style={{ borderColor: BORDER, background: CARD }}>
               <div
                 className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500"
                 style={{ background: `linear-gradient(135deg, hsl(43 72% 30%), transparent)` }}
@@ -235,7 +235,7 @@ export default function Home() {
               </h2>
             </div>
             <Link
-              href="/__preview/c/collections"
+              href="/collections"
               className="inline-flex items-center gap-3 text-xs font-black uppercase tracking-widest border px-5 py-3 hover:border-primary hover:text-primary transition-colors group"
               style={{ borderColor: BORDER }}
             >
@@ -273,7 +273,7 @@ export default function Home() {
               </h2>
             </div>
             <Link
-              href="/__preview/c/collections?category=snacks"
+              href="/collections?category=snacks"
               className="inline-flex items-center gap-3 text-xs font-black uppercase tracking-widest px-5 py-3 transition-all hover:opacity-90"
               style={{ background: GOLD, color: 'hsl(0 0% 5%)' }}
             >
@@ -353,7 +353,7 @@ export default function Home() {
               </h2>
             </div>
             <Link
-              href="/__preview/c/collections?category=tea"
+              href="/collections?category=tea"
               className="inline-flex items-center gap-3 text-xs font-black uppercase tracking-widest px-5 py-3 transition-all hover:opacity-90"
               style={{ background: GREEN, color: 'hsl(0 0% 5%)' }}
             >
