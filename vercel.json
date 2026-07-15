@@ -1,0 +1,12 @@
+{
+  "buildCommand": "pnpm --filter @workspace/hillbay run build",
+  "outputDirectory": "artifacts/hillbay/dist/public",
+  "installCommand": "pnpm install",
+  "framework": null,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "env": {
+    "BASE_PATH": "/"
+  }
+}
