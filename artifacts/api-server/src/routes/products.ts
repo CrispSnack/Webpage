@@ -9,8 +9,6 @@ router.get("/", async (req, res) => {
   try {
     const { category, q, badge, featured } = req.query as Record<string, string>;
 
-    let query = db.select().from(productsTable).where(eq(productsTable.active, true));
-
     const conditions = [eq(productsTable.active, true)];
     if (category) conditions.push(eq(productsTable.category, category));
     if (badge) conditions.push(eq(productsTable.badge, badge));

@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { db, ordersTable, productsTable, cartItemsTable, couponsTable } from "@workspace/db";
 import { eq, and, desc } from "drizzle-orm";
-import { v4 as uuidv4 } from "uuid";
 import type { OrderItem, ShippingAddress, GstDetails } from "@workspace/db";
+import { calculateGst } from "../lib/gst.js";
 
 const router = Router();
 
@@ -11,31 +11,6 @@ async function generateOrderNumber(): Promise<string> {
   const date = new Date().toISOString().slice(0, 10).replace(/-/g, "");
   const suffix = Math.floor(10000 + Math.random() * 90000);
   return `CNS-${date}-${suffix}`;
-}
-
-// Calculate GST breakdown (CGST+SGST for intra-state, IGST for inter-state)
-// Simplified: always CGST+SGST for Tamil Nadu orders
-function calculateGst(items: OrderItem[], buyerState = "Tamil Nadu") {
-  let totalTaxableAmount = 0;
-  let totalTax = 0;
-
-  for (const item of items) {
-    const price = parseFloat(item.price);
-    const gstRate = parseFloat(item.gstRate) / 100;
-    const taxableAmount = (price * item.quantity) / (1 + gstRate);
-    const tax = price * item.quantity - taxableAmount;
-    totalTaxableAmount += taxableAmount;
-    totalTax += tax;
-  }
-
-  const isInterState = buyerState !== "Tamil Nadu";
-  return {
-    taxableAmount: totalTaxableAmount.toFixed(2),
-    cgst: isInterState ? "0.00" : (totalTax / 2).toFixed(2),
-    sgst: isInterState ? "0.00" : (totalTax / 2).toFixed(2),
-    igst: isInterState ? totalTax.toFixed(2) : "0.00",
-    totalTax: totalTax.toFixed(2),
-  };
 }
 
 // POST /api/orders  — place order
