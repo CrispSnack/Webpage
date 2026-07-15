@@ -59,9 +59,9 @@ export default function Contact() {
           <p className="text-xs font-black uppercase tracking-[0.2em] mb-6" style={{ color: GREEN }}>— Our Details</p>
           <ul className="space-y-5 mb-10">
             {[
-              { icon: MapPin, label: 'Address', value: '14, Gandhi Road, Coimbatore, Tamil Nadu — 641001' },
-              { icon: Phone, label: 'Phone', value: '+91 98765 43210' },
-              { icon: Mail, label: 'Email', value: 'hello@crispynsnacky.in' },
+              { icon: MapPin, label: 'Address', value: 'A46, Casa Grande Urbano, Vengadamangalam Road, Ponmar, Chennai — 600127' },
+              { icon: Phone, label: 'Phone', value: '+91 9952340709' },
+              { icon: Mail, label: 'Email', value: 'connect@hillbay.in' },
               { icon: Clock, label: 'Hours', value: 'Mon–Sat, 9 AM – 6 PM IST' },
             ].map(({ icon: Icon, label, value }) => (
               <li key={label} className="flex items-start gap-4">

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import crispyLogo from '@assets/ChatGPT_Image_Jul_15,_2026,_10_24_44_PM_1784134623199.png';
+import crispyLogo from '@assets/Final_Crispy_N_Snacky_Logo_1784136094962.png';
 
 const GREEN = 'hsl(122 42% 51%)';
 const GOLD = 'hsl(43 72% 56%)';
@@ -29,7 +29,7 @@ export default function About() {
           <img
             src={crispyLogo}
             alt="Crispy N Snacky"
-            className="w-24 h-24 mx-auto mb-6 drop-shadow-2xl"
+            className="w-24 h-24 mx-auto mb-6 rounded-full ring-4 ring-[hsl(43_72%_56%/0.6)] drop-shadow-2xl"
             style={{ filter: 'drop-shadow(0 0 30px hsl(122 42% 51% / 0.4))' }}
           />
           <p className="text-xs font-black uppercase tracking-[0.25em] mb-4" style={{ color: GREEN }}>— Our Story</p>

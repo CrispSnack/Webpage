@@ -1,5 +1,5 @@
 import { Link } from 'wouter';
-import crispyLogo from '@assets/ChatGPT_Image_Jul_15,_2026,_10_24_44_PM_1784134623199.png';
+import crispyLogo from '@assets/Final_Crispy_N_Snacky_Logo_1784136094962.png';
 
 const GREEN = 'hsl(122 42% 51%)';
 const GOLD = 'hsl(43 72% 56%)';
@@ -16,7 +16,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-5">
             <Link href="/__preview/c" className="flex items-center gap-3 mb-5 w-fit group hover:opacity-85 transition-opacity">
-              <img src={crispyLogo} alt="Crispy N Snacky" className="w-12 h-12 object-contain" />
+              <img src={crispyLogo} alt="Crispy N Snacky" className="w-12 h-12 object-contain rounded-full ring-2 ring-[hsl(43_72%_56%/0.7)]" />
               <div className="flex flex-col">
                 <span className="text-lg font-black uppercase tracking-tighter" style={{ fontFamily: 'var(--font-heading)', color: GREEN }}>
                   Crispy<span style={{ color: GOLD }}>N</span>Snacky
@@ -97,9 +97,9 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h4 className="text-xs font-black uppercase tracking-widest mb-5" style={{ fontFamily: 'var(--font-heading)', color: GREEN }}>Contact</h4>
             <ul className="space-y-3 text-sm font-bold uppercase" style={{ color: MUTED_FG }}>
-              <li>hello@crispynsnacky.in</li>
-              <li>+91 98765 43210</li>
-              <li>Coimbatore, TN</li>
+              <li>connect@hillbay.in</li>
+              <li>+91 99523 40709</li>
+              <li>Ponmar, Chennai — 600127</li>
               <li>Mon–Sat · 9AM–6PM</li>
             </ul>
           </div>

@@ -4,7 +4,7 @@ import { PRODUCTS } from '../../../data/products';
 import ProductCard from '../components/ProductCard';
 import ReviewsBlock from '../components/ReviewsBlock';
 import TrustBadges from '../components/TrustBadges';
-import crispyLogo from '@assets/ChatGPT_Image_Jul_15,_2026,_10_24_44_PM_1784134623199.png';
+import crispyLogo from '@assets/Final_Crispy_N_Snacky_Logo_1784136094962.png';
 
 const GREEN = 'hsl(122 42% 51%)';
 const GOLD = 'hsl(43 72% 56%)';
@@ -117,7 +117,7 @@ export default function Home() {
               <img
                 src={crispyLogo}
                 alt="Crispy N Snacky"
-                className="w-72 h-72 object-contain drop-shadow-2xl"
+                className="w-72 h-72 object-contain rounded-full ring-4 ring-[hsl(43_72%_56%/0.6)] drop-shadow-2xl"
                 style={{ filter: 'drop-shadow(0 0 40px hsl(122 42% 51% / 0.3))' }}
               />
               <div className="flex gap-3 flex-wrap justify-center">

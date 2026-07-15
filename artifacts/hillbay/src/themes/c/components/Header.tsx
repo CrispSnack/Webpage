@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
 import { ShoppingBag, User, Menu, X, ChevronDown } from 'lucide-react';
 import { useCart } from '../../../contexts/CartContext';
-import crispyLogo from '@assets/ChatGPT_Image_Jul_15,_2026,_10_24_44_PM_1784134623199.png';
+import crispyWordmark from '@assets/Header_Text_Image_transparent.png';
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
@@ -62,23 +62,12 @@ export default function Header() {
           <div className="flex items-center justify-between h-[72px]">
 
             {/* ── Logo (left) ── */}
-            <Link href="/" className="flex items-center gap-3 shrink-0 group hover:opacity-90 transition-opacity">
+            <Link href="/" className="flex items-center shrink-0 group hover:opacity-90 transition-opacity">
               <img
-                src={crispyLogo}
-                alt="Crispy N Snacky"
-                className="h-12 w-12 object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-lg"
+                src={crispyWordmark}
+                alt="Crispy N Snacky — Crunchy Moments, Delivered"
+                className="h-[52px] w-auto object-contain"
               />
-              <div className="hidden sm:flex flex-col leading-none">
-                <span
-                  className="text-lg font-black uppercase tracking-tighter"
-                  style={{ fontFamily: 'var(--font-heading)', color: 'hsl(122 42% 51%)' }}
-                >
-                  Crispy<span style={{ color: 'hsl(43 72% 56%)' }}>N</span>Snacky
-                </span>
-                <span className="text-[9px] font-bold uppercase tracking-[0.15em]" style={{ color: 'hsl(213 28% 55%)' }}>
-                  Crunchy Moments, Delivered
-                </span>
-              </div>
             </Link>
 
             {/* ── Desktop Nav (right) ── */}

@@ -1,6 +1,6 @@
 kind = "web"
 previewPath = "/"
-title = "HILLBAY — Tea & Snacks"
+title = "Crispy N Snacky"
 version = "1.0.0"
 id = "artifacts/hillbay"
 router = "path"
