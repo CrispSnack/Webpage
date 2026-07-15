@@ -19,8 +19,8 @@ if (!isBuild) {
   }
 }
 
-// BASE_PATH defaults to '/admin' for production builds on Vercel
-const basePath = process.env.BASE_PATH ?? '/admin/';
+// Root-directory Vercel deployments serve the admin app from '/'
+const basePath = process.env.BASE_PATH ?? '/';
 
 export default defineConfig({
   base: basePath,
