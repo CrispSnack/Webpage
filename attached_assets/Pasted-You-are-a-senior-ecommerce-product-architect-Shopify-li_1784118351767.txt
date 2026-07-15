@@ -1,0 +1,80 @@
+You are a senior ecommerce product architect + Shopify-like UX designer + full-stack engineer.
+
+Build and launch a production-ready ecommerce website for selling TEA + SNACKS in INDIA.
+
+ENVIRONMENT
+- I am building inside Replit (code + preview must run in Replit).
+- Final hosting must be Vercel.
+- Stack: Next.js (App Router) + TypeScript (strict) + Tailwind + shadcn/ui (Radix) + Prisma.
+- Payments: Razorpay (India). Implement server-side signature verification + webhook verification + idempotency.
+- Database: Postgres (Vercel Postgres preferred). Use Prisma with DATABASE_URL env var.
+- Auth: Auth.js/NextAuth (credentials + optional OTP later).
+- Admin: Shopify-like admin to manage products, variants, inventory, coupons, orders.
+
+REFERENCE / EXAMPLE SITE (STYLE INSPIRATION)
+Use this website ONLY as visual/UX inspiration (structure, section rhythm, bold snack-brand vibe, conversion patterns).
+Do NOT copy their branding, logos, images, or text. Create original design + original copy for my brand.
+Example site URL:
+https://www.freestylesnacking.com/?srsltid=AfmBOopWe3hpPoEzBM7eiRGQVZfkqZOnf5EGgxZZN7rKJfBVc3z13fw_
+
+BUSINESS CONTEXT
+- Brand name: HILLBAY
+- Market: Tamil Nadu + India-wide shipping
+- Currency: INR (₹)
+- Products: Tea (loose leaf, bags, gift boxes) + Snacks (Tamil Nadu + Kerala items)
+- Positioning: [PREMIUM / VALUE / ECO-FRIENDLY]
+- Tone: modern, Indian, premium-but-friendly, Shopify-like
+
+REPLIT-SPECIFIC REQUIREMENTS (MUST DO)
+1) Make the project runnable in Replit with one click:
+   - Add `.replit` run command for Next.js dev server.
+   - Add `replit.nix` (or equivalent) if needed for Node + Prisma deps.
+   - Ensure the web preview works on port 3000 (or Replit’s assigned port).
+2) Store secrets using Replit Secrets; provide `.env.example`.
+3) Provide exact commands to install, migrate, seed, and run inside Replit.
+
+HARD REQUIREMENT: 3 FRONT-END DESIGNS TO CHOOSE FROM (A/B/C)
+STEP 1 (DO THIS FIRST): Implement THREE distinct storefront design options that I can preview immediately in Replit.
+- A: Minimal Premium (clean, whitespace, elegant typography)
+- B: Warm Artisanal (earthy palette, handcrafted vibe)
+- C: Bold Modern (high contrast, energetic, snack-brand feel inspired by the example site)
+
+For EACH design option:
+- Define design tokens (palette, typography, spacing, radii, shadows).
+- Build these pages using that design:
+  - Home
+  - Collection/Category listing
+  - Product Detail (PDP) with variants
+  - Cart (drawer + page)
+  - Checkout (UI only in Step 1)
+  - Account/Orders (UI only in Step 1)
+- Build reusable components: announcement bar, header/nav, predictive search UI, product cards, variant picker, reviews block, trust badges, footer.
+- Mobile-first responsive + basic accessibility.
+
+IMPLEMENTATION DETAIL FOR STEP 1
+- Create preview routes so I can see all 3 designs quickly, e.g.:
+  - `/__preview/a`
+  - `/__preview/b`
+  - `/__preview/c`
+  (or a theme switcher page that toggles A/B/C, but previews must be obvious and fast.)
+- Use seeded demo data (in code) for Step 1 only so previews render without DB setup.
+- STOP after Step 1 and ask me: “Which design do you choose: A, B, or C?”
+- Do NOT proceed until I reply with A/B/C.
+
+STEP 2 (AFTER I CHOOSE A/B/C): BUILD FULL ECOMMERCE (Shopify-like)
+After my choice, do the following in phases (no unstructured code dumps):
+- Add Prisma schema + Postgres + migrations + seed (12+ products with realistic INR pricing and variants).
+- Implement real catalog, search, filtering, cart persistence, coupons.
+- Implement checkout flow + Razorpay payment (server-side verified) + webhook handler (idempotent).
+- Order confirmation + order history + order status page.
+- India-specific address fields: phone, landmark, state, PIN code; INR formatting.
+- GST-ready invoice fields + basic invoice template.
+- Admin dashboard: products/variants/inventory/coupons/orders + audit log.
+
+VERCEL LAUNCH (MUST INCLUDE)
+- Provide exact Vercel deployment steps from Replit:
+  - Push to GitHub from Replit, import into Vercel, set env vars, provision Vercel Postgres, run `prisma migrate deploy`.
+  - Configure Razorpay webhook endpoint and required env vars.
+- Include a launch checklist (SEO, analytics, policies pages, performance, security).
+
+Start now with STEP 1 only, generating the three preview designs runnable in Replit.

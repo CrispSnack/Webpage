@@ -1,0 +1,49 @@
+/* Theme C — Bold Modern: Crispy N Snacky brand palette */
+/* Logo palette: forest green #1B5C1E, bright green #4DB84A, navy #1B3F7E, gold #CFA023 */
+.theme-c {
+  /* Deep navy background (logo's navy section) */
+  --background: 218 62% 7%;        /* #060E1E */
+  --foreground: 210 60% 96%;       /* #EEF4FF */
+
+  /* Bright leaf green — primary CTA */
+  --primary: 122 42% 51%;          /* #4DB84A */
+  --primary-foreground: 0 0% 5%;
+
+  /* Gold / amber — secondary accent (logo border) */
+  --secondary: 43 72% 46%;         /* #CFA023 */
+  --secondary-foreground: 0 0% 5%;
+
+  /* Cards */
+  --card: 218 58% 12%;             /* #0D1E3B */
+  --card-foreground: 210 60% 96%;
+  --card-border: 218 52% 20%;      /* #1A3155 */
+
+  /* Borders & muted */
+  --border: 218 52% 20%;
+  --muted: 218 55% 10%;            /* #0A1830 */
+  --muted-foreground: 213 28% 60%; /* #7890B0 */
+
+  /* Accent: forest green */
+  --accent: 123 54% 23%;           /* #1B5C1E */
+  --accent-foreground: 0 0% 100%;
+
+  /* Destructive */
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* Input / ring */
+  --input: 218 52% 22%;
+  --ring: 122 42% 51%;
+
+  /* Popovers */
+  --popover: 218 58% 12%;
+  --popover-foreground: 210 60% 96%;
+  --popover-border: 218 52% 20%;
+
+  /* Typography */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Shape — sharp/square for bold feel */
+  --radius: 0.25rem;
+}

@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "HILLBAY — Tea & Snacks"
+version = "1.0.0"
+id = "artifacts/hillbay"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24765
+
+[services.development]
+run = "pnpm --filter @workspace/hillbay run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/hillbay", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/hillbay/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24765"
+BASE_PATH = "/"

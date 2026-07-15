@@ -1,0 +1,49 @@
+/* Theme B — Warm Artisanal: derived from Hillbay logo */
+/* Logo palette: bright leaf green #5BBD35, deep navy teal #1A4D6B, sun yellow #F5D000 */
+.theme-b {
+  /* Backgrounds */
+  --background: 95 40% 95%;        /* #EEF7E8 — light sage cream */
+  --foreground: 120 37% 17%;       /* #1A3A1A — deep forest */
+
+  /* Bright leaf green (logo border / lighter hills) */
+  --primary: 100 52% 47%;          /* #5BBD35 — leaf green */
+  --primary-foreground: 0 0% 100%;
+
+  /* Deep navy teal (logo text gradient bottom / deep water) */
+  --secondary: 204 60% 26%;        /* #1A4D6B — deep navy */
+  --secondary-foreground: 0 0% 100%;
+
+  /* Cards */
+  --card: 100 40% 97%;             /* #F2FAEe — very light green-white */
+  --card-foreground: 120 37% 17%;
+  --card-border: 110 28% 78%;      /* #B8D9A8 — sage green border */
+
+  /* Borders & muted */
+  --border: 110 28% 78%;
+  --muted: 100 33% 90%;            /* #D6EEC8 — soft sage */
+  --muted-foreground: 107 22% 45%; /* #587A4E */
+
+  /* Accent: sun yellow from logo */
+  --accent: 50 100% 48%;           /* #F5D000 */
+  --accent-foreground: 120 37% 17%;
+
+  /* Destructive */
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* Input / ring */
+  --input: 110 28% 72%;
+  --ring: 100 52% 47%;
+
+  /* Popovers */
+  --popover: 100 40% 97%;
+  --popover-foreground: 120 37% 17%;
+  --popover-border: 110 28% 78%;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Lato', sans-serif;
+
+  /* Shape */
+  --radius: 0.75rem;
+}
