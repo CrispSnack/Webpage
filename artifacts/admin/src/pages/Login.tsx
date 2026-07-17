@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'wouter';
-import { useAdminLogin, useAdminGetMe } from '@workspace/api-client-react';
+import { useAdminLogin, useAdminGetMe, getAdminGetMeQueryKey } from '@workspace/api-client-react';
 import { Button, Input, Label, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { Store, Loader2 } from 'lucide-react';
 
@@ -11,7 +11,7 @@ export function Login() {
   const [errorMsg, setErrorMsg] = useState('');
   
   const { data: user, isLoading: userLoading } = useAdminGetMe({
-    query: { retry: false }
+    query: { queryKey: getAdminGetMeQueryKey(), retry: false }
   });
   
   const loginMutation = useAdminLogin();

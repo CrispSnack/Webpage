@@ -8,36 +8,42 @@ declare module "express-session" {
   }
 }
 
-export function requireUser(req: Request, res: Response, next: NextFunction) {
+export function requireUser(req: Request, res: Response, next: NextFunction): void {
   if (!req.session?.userId) {
-    return res.status(401).json({ error: "Unauthorised. Please log in." });
+    res.status(401).json({ error: "Unauthorised. Please log in." });
+    return;
   }
   next();
 }
 
-export function requireStaff(req: Request, res: Response, next: NextFunction) {
+export function requireStaff(req: Request, res: Response, next: NextFunction): void {
   if (!req.session?.staffId) {
-    return res.status(401).json({ error: "Admin access required." });
+    res.status(401).json({ error: "Admin access required." });
+    return;
   }
   next();
 }
 
-export function requireManager(req: Request, res: Response, next: NextFunction) {
+export function requireManager(req: Request, res: Response, next: NextFunction): void {
   if (!req.session?.staffId) {
-    return res.status(401).json({ error: "Admin access required." });
+    res.status(401).json({ error: "Admin access required." });
+    return;
   }
   if (!["owner", "manager"].includes(req.session.staffRole ?? "")) {
-    return res.status(403).json({ error: "Manager or Owner access required." });
+    res.status(403).json({ error: "Manager or Owner access required." });
+    return;
   }
   next();
 }
 
-export function requireOwner(req: Request, res: Response, next: NextFunction) {
+export function requireOwner(req: Request, res: Response, next: NextFunction): void {
   if (!req.session?.staffId) {
-    return res.status(401).json({ error: "Admin access required." });
+    res.status(401).json({ error: "Admin access required." });
+    return;
   }
   if (req.session.staffRole !== "owner") {
-    return res.status(403).json({ error: "Owner access required." });
+    res.status(403).json({ error: "Owner access required." });
+    return;
   }
   next();
 }

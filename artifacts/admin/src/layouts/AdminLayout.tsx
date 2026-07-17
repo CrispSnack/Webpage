@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation, Link } from 'wouter';
-import { useAdminGetMe, useAdminLogout } from '@workspace/api-client-react';
+import { useAdminGetMe, useAdminLogout, getAdminGetMeQueryKey } from '@workspace/api-client-react';
 import { LayoutDashboard, Package, ShoppingCart, Tag, Users, User, LogOut, Loader2, Store } from 'lucide-react';
 import { Button } from '@/components/ui';
 
@@ -8,6 +8,7 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
   const [location, setLocation] = useLocation();
   const { data, isLoading, error } = useAdminGetMe({
     query: {
+      queryKey: getAdminGetMeQueryKey(),
       retry: false,
     }
   });

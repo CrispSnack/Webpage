@@ -3,7 +3,7 @@ import { useLocation, useParams } from 'wouter';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useAdminGetProduct, useAdminCreateProduct, useAdminUpdateProduct } from '@workspace/api-client-react';
+import { useAdminGetProduct, useAdminCreateProduct, useAdminUpdateProduct, getAdminGetProductQueryKey } from '@workspace/api-client-react';
 import { Button, Input, Textarea, Label, Switch, Card, CardContent, CardHeader, CardTitle, NativeSelect } from '@/components/ui';
 import { Loader2, ArrowLeft } from 'lucide-react';
 import { Link } from 'wouter';
@@ -33,7 +33,7 @@ export function ProductForm() {
   const id = params.id ? parseInt(params.id) : undefined;
   const isEditing = !!id;
 
-  const { data: productData, isLoading: isFetching } = useAdminGetProduct(id as any, { query: { enabled: isEditing } });
+  const { data: productData, isLoading: isFetching } = useAdminGetProduct(id as any, { query: { queryKey: getAdminGetProductQueryKey(id as number), enabled: isEditing } });
   
   const createMutation = useAdminCreateProduct();
   const updateMutation = useAdminUpdateProduct();
@@ -95,9 +95,9 @@ export function ProductForm() {
     const payload = {
       ...data,
       images: data.images ? data.images.split('\n').map(u => u.trim()).filter(Boolean) : [],
-      comparePrice: data.comparePrice || null,
-      badge: data.badge || null,
-      weight: data.weight || null,
+      comparePrice: data.comparePrice || undefined,
+      badge: data.badge || undefined,
+      weight: data.weight || undefined,
       description: data.description || '',
       shortDescription: data.shortDescription || '',
     };
