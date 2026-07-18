@@ -126,6 +126,7 @@ globalThis.__dirname = __bannerPath.dirname(globalThis.__filename);
     bundle: true,
     format: "cjs",
     outdir: path.resolve(distDir, "serverless"),
+    outExtension: { ".js": ".cjs" },
     logLevel: "info",
     external: [
       "*.node",
