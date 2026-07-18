@@ -1,6 +1,6 @@
 import { Link } from 'wouter';
 import { motion } from 'framer-motion';
-import { PRODUCTS } from '../../../data/products';
+import { useProducts } from '../../../hooks/useProducts';
 import ProductCard from '../components/ProductCard';
 import ReviewsBlock from '../components/ReviewsBlock';
 import TrustBadges from '../components/TrustBadges';
@@ -14,9 +14,10 @@ const BORDER = 'hsl(218 52% 20%)';
 const MUTED_FG = 'hsl(213 28% 60%)';
 
 export default function Home() {
-  const teas = PRODUCTS.filter((p) => p.category === 'tea').slice(0, 4);
-  const snacks = PRODUCTS.filter((p) => p.category === 'snacks').slice(0, 4);
-  const bestsellers = PRODUCTS.slice(0, 4);
+  const { data: allProducts = [] } = useProducts();
+  const teas = allProducts.filter((p) => p.category === 'tea').slice(0, 4);
+  const snacks = allProducts.filter((p) => p.category === 'snacks').slice(0, 4);
+  const bestsellers = allProducts.slice(0, 4);
 
   return (
     <div className="flex flex-col bg-background">
