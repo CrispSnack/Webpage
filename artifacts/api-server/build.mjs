@@ -118,7 +118,6 @@ globalThis.__dirname = __bannerPath.dirname(globalThis.__filename);
     `,
     },
   });
-}
 
   // Build a CJS app-only bundle for Vercel serverless (no listen())
   await esbuild({
@@ -126,7 +125,7 @@ globalThis.__dirname = __bannerPath.dirname(globalThis.__filename);
     platform: "node",
     bundle: true,
     format: "cjs",
-    outfile: path.resolve(distDir, "app.cjs"),
+    outdir: path.resolve(distDir, "serverless"),
     logLevel: "info",
     external: [
       "*.node",

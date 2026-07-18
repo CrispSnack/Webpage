@@ -2,14 +2,7 @@
   "buildCommand": "cd ../.. && pnpm install && pnpm --filter @workspace/api-server run build",
   "installCommand": "echo skip",
   "framework": null,
-  "outputDirectory": ".",
-  "functions": {
-    "api/index.js": {
-      "maxDuration": 30,
-      "includeFiles": "dist/**"
-    }
-  },
   "rewrites": [
-    { "source": "/(.*)", "destination": "/api" }
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
