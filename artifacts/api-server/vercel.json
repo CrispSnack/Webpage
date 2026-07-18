@@ -2,6 +2,7 @@
   "buildCommand": "cd ../.. && pnpm install && pnpm --filter @workspace/api-server run build",
   "installCommand": "echo skip",
   "framework": null,
+  "outputDirectory": "public",
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
