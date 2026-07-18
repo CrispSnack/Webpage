@@ -120,6 +120,31 @@ globalThis.__dirname = __bannerPath.dirname(globalThis.__filename);
   });
 }
 
+  // Build a CJS app-only bundle for Vercel serverless (no listen())
+  await esbuild({
+    entryPoints: [path.resolve(artifactDir, "src/app.ts")],
+    platform: "node",
+    bundle: true,
+    format: "cjs",
+    outfile: path.resolve(distDir, "app.cjs"),
+    logLevel: "info",
+    external: [
+      "*.node",
+      "sharp",
+      "better-sqlite3",
+      "sqlite3",
+      "canvas",
+      "bcrypt",
+      "argon2",
+      "fsevents",
+      "pg-native",
+    ],
+    plugins: [
+      esbuildPluginPino({ transports: ["pino-pretty"] })
+    ],
+  });
+}
+
 buildAll().catch((err) => {
   console.error(err);
   process.exit(1);
