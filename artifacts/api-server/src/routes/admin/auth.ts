@@ -22,8 +22,11 @@ router.post("/login", async (req, res) => {
 
     req.session.staffId = staff.id;
     req.session.staffRole = staff.role;
-    const { passwordHash: _, ...safeStaff } = staff;
-    return res.json({ staff: safeStaff });
+    req.session.save((err) => {
+      if (err) return res.status(500).json({ error: "Session save failed." });
+      const { passwordHash: _, ...safeStaff } = staff;
+      return res.json({ staff: safeStaff });
+    });
   } catch (err) {
     return res.status(500).json({ error: "Login failed." });
   }
