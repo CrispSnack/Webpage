@@ -1,5 +1,7 @@
 {
+  "buildCommand": "cd ../.. && pnpm install && pnpm --filter @workspace/admin run build",
   "outputDirectory": "dist/public",
+  "installCommand": "echo 'handled in buildCommand'",
   "framework": null,
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
