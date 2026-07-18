@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useAdminGetProduct, useAdminCreateProduct, useAdminUpdateProduct } from '@workspace/api-client-react';
 import { Button, Input, Textarea, Label, Switch, Card, CardContent, CardHeader, CardTitle, NativeSelect } from '@/components/ui';
+import { ImageUploader } from '@/components/ImageUploader';
 import { Loader2, ArrowLeft } from 'lucide-react';
 import { Link } from 'wouter';
 
@@ -157,10 +158,10 @@ export function ProductForm() {
             <Card>
               <CardHeader><CardTitle>Media</CardTitle></CardHeader>
               <CardContent>
-                <div className="space-y-2">
-                  <Label>Image URLs (one per line)</Label>
-                  <Textarea {...form.register('images')} rows={4} placeholder="https://example.com/img1.jpg&#10;https://example.com/img2.jpg" />
-                </div>
+                <ImageUploader
+                  value={form.watch('images') ?? ''}
+                  onChange={(val) => form.setValue('images', val, { shouldDirty: true })}
+                />
               </CardContent>
             </Card>
 
