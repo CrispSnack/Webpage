@@ -8,5 +8,11 @@
   ],
   "env": {
     "BASE_PATH": "/"
+  },
+   "git": {
+    "deploymentEnabled": {
+      "main": false,
+      "vinodh-branch": true
+    }
   }
 }
